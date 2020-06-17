@@ -1,12 +1,12 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const app = express_1.default();
-app.listen(3333, () => {
-    // tslint:disable-next-line: no-console
-    console.log('Server running on port 3333');
+const graphql_yoga_1 = require("graphql-yoga");
+const rootSchema_1 = require("./graphql/rootSchema");
+const client_1 = require("@prisma/client");
+const prisma = new client_1.PrismaClient();
+const server = new graphql_yoga_1.GraphQLServer({
+    schema: rootSchema_1.Schema,
+    context: { prisma }
 });
+server.start(() => console.log('server running on port 4000'));
 //# sourceMappingURL=index.js.map

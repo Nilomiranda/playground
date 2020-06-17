@@ -1,8 +1,12 @@
-import express from 'express';
+import { GraphQLServer } from 'graphql-yoga'
+import {Schema} from "./graphql/rootSchema";
+import { PrismaClient } from '@prisma/client'
 
-const app = express();
+const prisma = new PrismaClient()
 
-app.listen(3333, () => {
-  // tslint:disable-next-line: no-console
-  console.log('Server running on port 3333')
+const server = new GraphQLServer({
+  schema: Schema,
+  context: { prisma }
 })
+
+server.start(() => console.log('server running on port 4000'))
