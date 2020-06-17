@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Schema = void 0;
 const graphql_1 = require("graphql");
 const user_1 = __importDefault(require("./schemas/user"));
+const rootMutation_1 = __importDefault(require("./rootMutation"));
 exports.Schema = new graphql_1.GraphQLSchema({
     query: new graphql_1.GraphQLObjectType({
         name: 'RootQuery',
@@ -17,6 +18,7 @@ exports.Schema = new graphql_1.GraphQLSchema({
                 },
             },
         },
-    })
+    }),
+    mutation: rootMutation_1.default,
 });
 //# sourceMappingURL=rootSchema.js.map

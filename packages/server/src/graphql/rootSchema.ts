@@ -1,5 +1,6 @@
 import { GraphQLSchema, GraphQLObjectType, GraphQLList } from 'graphql'
 import User from "./schemas/user";
+import Mutation from "./rootMutation";
 
 export const Schema = new GraphQLSchema({
   query: new GraphQLObjectType({
@@ -12,5 +13,6 @@ export const Schema = new GraphQLSchema({
         },
       },
     },
-  })
+  }),
+  mutation: Mutation,
 })

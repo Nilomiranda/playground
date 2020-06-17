@@ -1,0 +1,1 @@
+{"version":3,"file":"rootMutation.js","sourceRoot":"","sources":["../../src/graphql/rootMutation.ts"],"names":[],"mappings":";;AAAA,qCAA2C;AAC3C,2CAA4C;AAE5C,MAAM,QAAQ,GAAG,IAAI,2BAAiB,CAAC;IACrC,IAAI,EAAE,UAAU;IAChB,WAAW,EAAE,0BAA0B;IACvC,MAAM,EAAE;QACN,UAAU,EAAE,iBAAU,EAAE;KACzB;CACF,CAAC,CAAA;AAEF,kBAAe,QAAQ,CAAC"}
