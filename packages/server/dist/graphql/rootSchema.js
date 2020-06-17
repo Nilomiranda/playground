@@ -13,7 +13,6 @@ exports.Schema = new graphql_1.GraphQLSchema({
             users: {
                 type: new graphql_1.GraphQLList(user_1.default),
                 resolve(root, args, context, info) {
-                    console.log('context.prisma -> ', context.prisma);
                     return context.prisma.user.findMany();
                 },
             },
